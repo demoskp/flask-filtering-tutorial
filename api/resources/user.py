@@ -1,23 +1,9 @@
-import operator
 from flask import request
 from flask_restful import Resource
 
 from api.schemas.user import UserSchema
 from extensions import db
 from models import User
-
-
-def get_comparator(comparator):
-    if comparator == ">=":
-        return operator.ge
-    if comparator == ">":
-        return operator.gt
-    if comparator == "<=":
-        return operator.le
-    if comparator == "<":
-        return operator.lt
-    if comparator == "=":
-        return operator.eq
 
 
 class UserList(Resource):
